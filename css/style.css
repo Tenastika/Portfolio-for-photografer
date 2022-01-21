@@ -56,7 +56,12 @@ body {
   }
 }
 
-li, ul {
+.overflow {
+  overflow: hidden;
+}
+
+li,
+ul {
   list-style: none;
 }
 
@@ -64,12 +69,13 @@ li, ul {
   max-width: 1440px;
   overflow: hidden;
   margin: 0 auto;
-  padding: 100px 20px 0;
+  padding: 100px 20px 0px;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 70px 20px 0;
+    max-width: 768px;
+    padding: 60px 20px 0px;
   }
 }
 
@@ -80,8 +86,6 @@ section {
 a {
   text-decoration: none;
   color: inherit;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 a:hover {
@@ -92,7 +96,8 @@ textarea {
   resize: none;
 }
 
-input, textarea {
+input,
+textarea {
   font: inherit;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px 20px;
@@ -100,7 +105,8 @@ input, textarea {
   color: #bdae82;
 }
 
-input:active, textarea:active {
+input:active,
+textarea:active {
   font: inherit;
   background-color: transparent;
   padding: 0 20px;
@@ -144,11 +150,18 @@ input:-webkit-autofill:active {
   transition: background-color 0s ease-in-out 9000s;
 }
 
+.icon,
+a,
+button,
+.btn {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 .icon:hover {
   -webkit-filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
           filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 button {
@@ -163,8 +176,6 @@ button {
   height: 55px;
   background-color: #bdae82;
   color: #000000;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .btn-tr {
@@ -234,8 +245,9 @@ button:hover {
 .hamburger {
   display: none;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  margin-right: 5px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .hamburger.is-active {
@@ -245,30 +257,32 @@ button:hover {
 }
 
 @-webkit-keyframes smallbig {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
   }
   50% {
     -webkit-transform: scale(0);
-    transform: scale(0);
+            transform: scale(0);
   }
 }
 
 @keyframes smallbig {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
   }
   50% {
     -webkit-transform: scale(0);
-    transform: scale(0);
+            transform: scale(0);
   }
 }
 
 .hamburger.is-active .line {
   -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 .line {
@@ -283,7 +297,7 @@ button:hover {
 
 .hamburger.is-active .line1 {
   -webkit-transform: translateY(13px) rotate(45deg);
-  transform: translateY(13px) rotate(45deg);
+          transform: translateY(13px) rotate(45deg);
 }
 
 .hamburger.is-active .line2 {
@@ -292,12 +306,14 @@ button:hover {
 
 .hamburger.is-active .line3 {
   -webkit-transform: translateY(-13px) rotate(-45deg);
-  transform: translateY(-13px) rotate(-45deg);
+          transform: translateY(-13px) rotate(-45deg);
 }
 
-/*blocks styles*/
+/*===================blocks styles===========================*/
 /*header style*/
 .header {
+  position: relative;
+  overflow: hidden;
   background: url("../assets/img/bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
@@ -317,7 +333,7 @@ button:hover {
 
 @media (max-width: 768px) {
   .header {
-    padding: 20px 60px;
+    padding: 20px 60px 20px 60px;
     background-position: -5px -30px;
     background-size: auto 620px;
   }
@@ -349,14 +365,14 @@ button:hover {
 
 @media (max-width: 768px) {
   .header__nav {
-    position: absolute;
+    position: fixed;
     overflow: hidden;
-    top: 0;
-    right: 800px;
+    top: 0px;
+    right: -800px;
     -webkit-transition: right 1.8s;
     transition: right 1.8s;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #000000a9;
     z-index: 10;
     font: 400 25px/60px 'Inter';
@@ -377,7 +393,7 @@ button:hover {
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 619px) {
   .header__nav-list {
     padding: 70px 0 0 70px;
   }
@@ -400,19 +416,11 @@ button:hover {
             transform: translateX(300%);
     -webkit-transition: 2s;
     transition: 2s;
+    margin-bottom: 16px;
   }
 }
 
 .header .active-menu .header__nav-item:nth-child(1) {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  -webkit-transition: -webkit-transform 0.8s ease-out;
-  transition: -webkit-transform 0.8s ease-out;
-  transition: transform 0.8s ease-out;
-  transition: transform 0.8s ease-out, -webkit-transform 0.8s ease-out;
-}
-
-.header .active-menu .header__nav-item:nth-child(2) {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   -webkit-transition: -webkit-transform 1s ease-out;
@@ -421,31 +429,40 @@ button:hover {
   transition: transform 1s ease-out, -webkit-transform 1s ease-out;
 }
 
+.header .active-menu .header__nav-item:nth-child(2) {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: -webkit-transform 1.3s ease-out;
+  transition: -webkit-transform 1.3s ease-out;
+  transition: transform 1.3s ease-out;
+  transition: transform 1.3s ease-out, -webkit-transform 1.3s ease-out;
+}
+
 .header .active-menu .header__nav-item:nth-child(3) {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  -webkit-transition: -webkit-transform 1.2s ease-out;
-  transition: -webkit-transform 1.2s ease-out;
-  transition: transform 1.2s ease-out;
-  transition: transform 1.2s ease-out, -webkit-transform 1.2s ease-out;
-}
-
-.header .active-menu .header__nav-item:nth-child(4) {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  -webkit-transition: -webkit-transform 1.4s ease-out;
-  transition: -webkit-transform 1.4s ease-out;
-  transition: transform 1.4s ease-out;
-  transition: transform 1.4s ease-out, -webkit-transform 1.4s ease-out;
-}
-
-.header .active-menu .header__nav-item:nth-child(5) {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   -webkit-transition: -webkit-transform 1.6s ease-out;
   transition: -webkit-transform 1.6s ease-out;
   transition: transform 1.6s ease-out;
   transition: transform 1.6s ease-out, -webkit-transform 1.6s ease-out;
+}
+
+.header .active-menu .header__nav-item:nth-child(4) {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: -webkit-transform 1.9s ease-out;
+  transition: -webkit-transform 1.9s ease-out;
+  transition: transform 1.9s ease-out;
+  transition: transform 1.9s ease-out, -webkit-transform 1.9s ease-out;
+}
+
+.header .active-menu .header__nav-item:nth-child(5) {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: -webkit-transform 2.1s ease-out;
+  transition: -webkit-transform 2.1s ease-out;
+  transition: transform 2.1s ease-out;
+  transition: transform 2.1s ease-out, -webkit-transform 2.1s ease-out;
 }
 
 .header__nav-list {
@@ -495,7 +512,7 @@ button:hover {
   }
 }
 
-/*main*/
+/*=========================================main=========================*/
 /*hero style*/
 .hero__container {
   height: 820px;
@@ -606,7 +623,7 @@ button:hover {
   .skills__list {
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    padding: 10px 20px 0;
+    padding: 10px 20px 7px;
   }
 }
 
@@ -614,7 +631,7 @@ button:hover {
   text-align: center;
   max-width: 320px;
   padding: 100px 20px 10px;
-  background-position: center top;
+  background-position: center 5px;
   background-repeat: no-repeat;
   background-size: 62px 50px;
 }
@@ -622,7 +639,7 @@ button:hover {
 @media (max-width: 768px) {
   .skills__item {
     padding: 85px 20px 10px;
-    margin-bottom: 65px;
+    margin-bottom: 62px;
   }
 }
 
@@ -807,6 +824,13 @@ button:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .price__container {
+    padding-top: 66px;
+    padding-bottom: 80px;
+  }
+}
+
 .price__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -829,6 +853,12 @@ button:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .price__list {
+    gap: 51px;
+  }
+}
+
 .price__card {
   border: 3px solid #BDAE82;
   padding: 39px 111px;
@@ -836,7 +866,7 @@ button:hover {
 
 @media (max-width: 768px) {
   .price__card {
-    padding: 39px 99px;
+    padding: 39px 98px;
   }
 }
 
@@ -975,7 +1005,7 @@ button:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 30px 0;
+    padding: 28px 0 29px;
     line-height: 24.2px;
   }
 }
@@ -1004,7 +1034,7 @@ button:hover {
 @media (max-width: 768px) {
   .footer__school {
     padding-left: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 }
 
