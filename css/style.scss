@@ -154,6 +154,16 @@ button {
   color: #bdae82;
 }
 
+.btn-tr._active {
+  background-color: #bdae82;
+  color: #000000;
+}
+
+.btn-tr._active:hover {
+  color: #ffffff;
+}
+
+
 button:hover {
   color: #ffffff;
 }
