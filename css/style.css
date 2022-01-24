@@ -362,6 +362,10 @@ button:hover {
   }
 }
 
+.header .lang-btn._active {
+  color: #bdae82;
+}
+
 .header__logo {
   background-image: url("../assets/svg/header/logo.svg");
   background-size: contain;
@@ -505,7 +509,6 @@ button:hover {
 }
 
 .header__switch-en {
-  color: #bdae82;
   margin-right: 10px;
 }
 
