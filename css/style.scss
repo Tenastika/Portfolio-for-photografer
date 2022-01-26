@@ -1,3 +1,5 @@
+@import "_light-style.scss";
+
 @font-face {
   font-family: 'Merriweather';
   src: url("../assets/fonts/Merriweather-Bold.ttf");
@@ -408,7 +410,7 @@ button:hover {
 
   &__switch {
     font: 700 20px/50px 'Inter';
-
+margin-right: 35px;
     @media (max-width: 768px) {
       margin: 0 20px 0 auto;
     }
@@ -430,6 +432,17 @@ button:hover {
       margin-left: 20px;
     }
   }
+
+		&__theme-link {
+      display: block;
+      width: 45px;
+      height: 45px;
+      background: url(../assets/svg/header/light-theme.svg) center center / contain no-repeat;
+
+      @media (max-width: 768px) {
+        margin-right: 20px;
+      }
+		}
 
 }
 

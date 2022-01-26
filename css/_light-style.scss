@@ -1,0 +1,136 @@
+body._light-theme {
+  background-color: #ffffff;
+  color: #1C1C1C;
+
+  input,
+  textarea {
+    font: inherit;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #1C1C1C;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #1C1C1C;
+  }
+
+  .icon {
+    filter: invert(97%);
+  }
+
+  .icon:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  }
+
+  .btn {
+    width: 220px;
+    height: 55px;
+    background-color: #bdae82;
+    color: #1C1C1C;
+  }
+
+  .btn:hover {
+    background-color: #1C1C1C;
+    color: #bdae82;
+  }
+
+  .btn-tr {
+    background-color: #bdae82;
+    border: 2px solid #BDAE82;
+    color: #1C1C1C;
+  }
+
+  .btn-tr._active {
+    background-color: #1C1C1C;
+    color: #BDAE82;
+  }
+
+  .section-title {
+    color: #1C1C1C;
+
+  }
+
+  .section-title::after,
+  .section-title::before {
+    background-color: #1C1C1C;
+  }
+
+  .line {
+    background-color: #1C1C1C;
+  }
+
+  /*header style*/
+
+  .header {
+
+    background: url('../assets/img/light-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center 0;
+
+    .lang-btn._active {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+
+      padding: 20px 60px 20px 60px;
+      background-position: -5px -30px;
+      background-size: auto 620px
+    }
+
+    @media (max-width: 700px) {
+      background-position: center -30px;
+      padding: 20px;
+    }
+
+
+    &__nav-list {
+      @media (max-width: 768px) {
+        background-color: #fff;
+      }
+    }
+
+    &__theme-link {
+      display: block;
+      width: 45px;
+      height: 45px;
+      background: url(../assets/svg/header/night-theme.svg) center center / contain no-repeat;
+    }
+  }
+
+  /*=========================================main=========================*/
+  /*hero style*/
+
+  .hero {
+
+    &__container {
+      background-image: url('../assets/img/light-bg.jpg');
+    }
+
+    &__content-btn {
+      background-color: #ffffff;
+    }
+  }
+
+
+  /*video style */
+
+  .video {
+    .icon {
+      filter: invert(0);
+    }
+  }
+
+  /* contacts style */
+
+  .contacts {
+
+    &__container {
+      background-image: url('../assets/img/contacts/light-contacts.jpg');
+    }
+
+    &__form-btn {
+      background-color: #fff;
+    }
+  }
+}
