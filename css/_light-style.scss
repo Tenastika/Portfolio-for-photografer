@@ -14,12 +14,23 @@ body._light-theme {
     color: #1C1C1C;
   }
 
+  a:hover {
+    color: #ffffff;
+  }
+
+  button:hover {
+
+    @media (max-width: 768px) {
+      transform: translateY(0);
+    }
+  }
+
   .icon {
     filter: invert(97%);
   }
 
   .icon:hover {
-    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    filter: invert(60%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
   }
 
   .btn {
@@ -55,9 +66,16 @@ body._light-theme {
     background-color: #1C1C1C;
   }
 
+  .hamburger:hover .line {
+    @media (max-width: 768px) {
+      background-color: #1C1C1C;   
+    }
+  }
+
   .line {
     background-color: #1C1C1C;
   }
+
 
   /*header style*/
 
@@ -119,6 +137,23 @@ body._light-theme {
     .icon {
       filter: invert(0);
     }
+    .icon:hover {
+      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    }
+    button::before {
+      display: none;
+    }
+    button:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+      
+      .icon:hover {
+        filter: none;
+      }
+    }
   }
 
   /* contacts style */
@@ -133,4 +168,12 @@ body._light-theme {
       background-color: #fff;
     }
   }
+
+  /* footer style */
+
+.footer {
+  a:hover {
+    color: #BDAE82;
+  }
+}
 }

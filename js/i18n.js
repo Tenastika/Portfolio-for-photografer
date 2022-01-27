@@ -6,7 +6,7 @@ const i18nObj = {
     'price': 'Price',
     'contacts': 'Contacts',
     'hero-title': 'Alexa Rise',
-    'hero-text': 'Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise',
+    'hero-txt': 'Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise',
     'hire': 'Hire me',
     'skill-title-1': 'Digital photography',
     'skill-text-1': 'High-quality photos in the studio and on the nature',
@@ -37,7 +37,11 @@ const i18nObj = {
     'price-description-3-span-5': 'Make up, visage, hairstyle',
     'order': 'Order shooting',
     'contact-me': 'Contact me',
-    'send-message': 'Send message'
+    'send-message': 'Send message',
+    'pl-email': 'E-mail',
+      'pl-phone': 'Phone',
+      'pl-mes': 'Message',
+    
   },
   'ru': {
     'skills': 'Навыки',
@@ -46,7 +50,7 @@ const i18nObj = {
     'price': 'Цены',
     'contacts': 'Контакты',
     'hero-title': 'Алекса Райс',
-    'hero-text': 'Сохраните искренние эмоции, романтические переживания и счастливые моменты жизни вместе с профессиональным фотографом',
+    'hero-txt': 'Сохраните искренние эмоции, романтические переживания и счастливые моменты жизни вместе с профессиональным фотографом',
     'hire': 'Пригласить',
     'skill-title-1': 'Фотография',
     'skill-text-1': 'Высококачественные фото в студии и на природе',
@@ -77,7 +81,10 @@ const i18nObj = {
     'price-description-3-span-5': 'Макияж, визаж, прическа',
     'order': 'Заказать съемку',
     'contact-me': 'Свяжитесь со мной',
-    'send-message': 'Отправить'
+    'send-message': 'Отправить',
+    'pl-email': 'Эл. почта',
+      'pl-phone': 'Телефон',
+      'pl-mes': 'Сообщение',
   }
 }
 export default i18nObj;

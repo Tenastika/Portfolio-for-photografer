@@ -1,16 +1,5 @@
  const gallery = () => {
 
-  /*==================кеширование изображений==================================*/
-
-const seasons = ['winter', 'spring', 'summer', 'autumn'];
-const preload = seasons.forEach(season => {
-  for(let i = 1; i <= 6; i++) {
-    const img = new Image();
-    img.src = `./assets/img/portfolio/${season}/${i}.jpg`;
-  }
-});
-
-
   /*==================переключение фото в секции портфолио======================*/
   const arrBtns = document.querySelectorAll('.portfolio__buttons-btn'),
       portfolioBtns =  document.querySelector('.portfolio__buttons'),     
@@ -27,6 +16,9 @@ portfolioBtns.addEventListener('click', function changePhoto (e) {
      });  
   }
 });
+
+
+
 }
 
 export  default gallery;

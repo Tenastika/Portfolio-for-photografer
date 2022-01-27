@@ -53,8 +53,28 @@ body {
   }
 }
 
+body.overflow::before {
+  content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.746);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: anim-op 1s;
+    @keyframes anim-op {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+}
+
 .overflow {
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 li,
@@ -137,18 +157,34 @@ button,
 }
 
 button {
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
   background-color: transparent;
   border: 0;
   font: inherit;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .btn {
+  
   width: 220px;
   height: 55px;
   background-color: #bdae82;
   color: #000000;
 }
+
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.7s;
+}
+
 
 .btn-tr {
   background-color: transparent;
@@ -168,6 +204,16 @@ button {
 
 button:hover {
   color: #ffffff;
+  transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+
+  @media (max-width: 768px) {
+    transform: translateY(0);
+  }
+}
+
+button:hover:before {
+  left: 100%;
 }
 
 .section-title {
@@ -223,11 +269,13 @@ button:hover {
   cursor: pointer;
   margin-right: 5px;
   transition: all 0.4s ease-in-out;
+z-index: 11;
 }
 
 .hamburger.is-active {
   animation: smallbig 0.6s forwards;
-  z-index: 11;
+  
+  
 }
 
 @keyframes smallbig {
@@ -259,6 +307,9 @@ button:hover {
 
 .hamburger:hover .line {
   background-color: #BDAE82;
+  @media (max-width: 768px) {
+    background-color: #ffffff;   
+  }
 }
 
 .hamburger.is-active .line1 {
@@ -332,7 +383,6 @@ button:hover {
       transition: right 1.8s;
       width: 100%;
       height: 100vh;
-      background-color: #000000a9;
       z-index: 10;
       font: 400 25px/60px 'Inter';
     }
@@ -433,6 +483,14 @@ margin-right: 35px;
     }
   }
 
+  &__theme:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    transition: all 0.5s;
+
+    @media (max-width: 768px) {
+      filter: none;
+    }
+  }
 		&__theme-link {
       display: block;
       width: 45px;
@@ -470,6 +528,10 @@ margin-right: 35px;
       height: 500px;
       background-position: center -120px;
     }
+
+    @media (max-width: 375px) {
+      padding-top: 10px;
+    }
   }
 
   &__content {
@@ -500,6 +562,9 @@ margin-right: 35px;
       font: 400 28px/55px 'Merriweather';
       margin-bottom: 40px;
     }
+    @media (max-width: 375px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__content-txt {
@@ -509,8 +574,8 @@ margin-right: 35px;
       margin-bottom: 59px;
     }
 
-    @media (max-width: 700px) {
-      margin-bottom: 59px;
+    @media (max-width: 375px) {
+      margin-bottom: 20px;
     }
   }
 }
@@ -669,6 +734,17 @@ margin-right: 35px;
     }
   }
 
+  .icon:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  }
+  button::before {
+    display: none;
+  }
+  button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
   &__player {
     background: url('../assets/img/Video/video.jpg')center top / cover no-repeat;
     
@@ -681,17 +757,17 @@ margin-right: 35px;
 
     @media (max-width: 768px) {
       background: url('../assets/img/Video/video768.jpg')center center / contain no-repeat;
-      height: 418px;
-     
-      
+      height: 418px; 
+      .icon:hover {
+        filter: none;
+      }
     }
 
     @media (max-width: 500px) {
       background: url('../assets/img/Video/video768.jpg')center center / contain no-repeat;
       height: 300px;
-
-
     }
+   
   }
 
   &__player-btn {
