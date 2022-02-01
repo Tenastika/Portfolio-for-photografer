@@ -1192,7 +1192,7 @@ button:hover:before {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 25px;
+  gap: 23px;
   text-align: center;
 }
 
